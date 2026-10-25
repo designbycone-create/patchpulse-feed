@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PatchPulse</title>
+<meta name="description" content="Website exposure monitor">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="app.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="sr" href="#main">Skip to content</a>
+<header class="bar" id="bar" hidden>
+  <div class="bar-in">
+    <a class="brand" href="#/">
+      <svg viewBox="0 0 34 22" aria-hidden="true"><polyline points="1,12 9,12 12,4 16,19 20,8 23,12 33,12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      PatchPulse
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#/" data-nav="home">Websites</a>
+      <a href="#/alerts" data-nav="alerts">Alerts</a>
+      <a href="#/settings" data-nav="settings">Settings</a>
+      <a href="#/help" data-nav="help">Help</a>
+    </nav>
+    <button class="textsize" id="textsize" type="button" aria-pressed="false" title="Make text bigger">A+</button>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+  <p class="muted">Loading PatchPulse…</p>
+  <noscript><p>PatchPulse needs JavaScript turned on in your browser.</p></noscript>
+</main>
+<div id="live" class="sr" aria-live="polite"></div>
+</body>
+</html>

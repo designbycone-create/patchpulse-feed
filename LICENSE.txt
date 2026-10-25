@@ -1,0 +1,45 @@
+PatchPulse End-User License Agreement (EULA)
+Copyright (c) 2026 FPH LLC. All rights reserved.
+
+DRAFT - have a qualified attorney review this agreement before selling.
+
+1. License. FPH LLC ("we") grants you a non-exclusive, non-transferable license to
+   install and use PatchPulse to monitor websites, up to the number of websites
+   allowed by the plan you purchased, for as long as your license is active. A valid
+   license key is required; there is no free version. Each license may be activated on
+   a limited number of computers (shown at purchase); you may move it by removing it
+   from one computer and activating it on another.
+
+2. Websites you may check. You may only add websites that you own or manage, or
+   that you have written permission from the owner to check. You are responsible
+   for how you use PatchPulse.
+
+3. Restrictions. You may not resell, sublicense, or redistribute PatchPulse, remove
+   license checks, or generate license keys, except as allowed in writing by us.
+   Agency plans may be used to monitor client websites the agency manages.
+
+4. No guarantee of security. PatchPulse looks for known, publicly disclosed problems
+   from the outside and checks public threat sources on a schedule. It cannot detect
+   flaws that have not been publicly disclosed, it cannot find every vulnerability, and
+   a "Looks good" result does not mean a website is secure or cannot be hacked. Threat
+   data comes from third-party public sources that may be incomplete, delayed or wrong.
+   PatchPulse does not block attacks and does not fix problems for you.
+
+5. Disclaimer of warranties. PATCHPULSE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+   KIND, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR
+   PURPOSE AND NON-INFRINGEMENT.
+
+6. Limitation of liability. TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE ARE NOT LIABLE
+   FOR ANY INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES, OR ANY LOSS OF DATA,
+   REVENUE OR PROFITS, INCLUDING DAMAGES FROM A SECURITY INCIDENT. OUR TOTAL LIABILITY
+   IS LIMITED TO THE AMOUNT YOU PAID FOR PATCHPULSE IN THE 12 MONTHS BEFORE THE CLAIM.
+
+7. Privacy. PatchPulse stores your website list, results and settings on your own
+   device. It contacts the websites you add; public threat sources (cisa.gov,
+   nvd.nist.gov, endoflife.date, wordpress.org, github.com); our threat-feed and
+   license-activation addresses (which receive your license key, a random install ID
+   and the app version - never your website list); and the alert services you enable.
+
+8. Termination. This license ends automatically if you break these terms.
+
+9. Third-party components are licensed separately; see THIRD-PARTY-NOTICES.txt.

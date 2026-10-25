@@ -1,0 +1,70 @@
+# PatchPulse threat hub - copy this file to .github/workflows/threat-hub.yml in a
+# separate PUBLIC GitHub repository (e.g. "patchpulse-feed") that also contains the
+# patchpulse/ source folder. Every hour it hunts CISA KEV, NVD, endoflife.date and
+# wordpress.org, signs the result, and publishes it with GitHub Pages at
+#   https://<your-github-name>.github.io/patchpulse-feed/intel.json
+# The app reads it at https://feed.patchpulsehq.com/intel.json (and rules.json): in
+# Settings > Pages > Custom domain enter feed.patchpulsehq.com, and in Cloudflare DNS add
+# CNAME feed -> <your-github-name>.github.io (DNS only, grey cloud). The feed is public threat data and is
+# signed, so a public repo is fine; the signing key stays in a repository secret.
+#
+# One-time setup:
+#   Settings > Secrets and variables > Actions > New repository secret:
+#     PP_RULES_SIGNING_KEY = contents of PRIVATE-rules-signing-key.txt
+#     NVD_API_KEY          = free key from https://nvd.nist.gov/developers/request-an-api-key (recommended)
+#   Settings > Pages > Source: GitHub Actions
+#   Optional repository variable PP_PLUGINS = comma-separated popular plugin slugs to pre-hunt
+name: Threat hub
+
+on:
+  schedule:
+    - cron: "17 * * * *"     # hourly
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: threat-hub
+  cancel-in-progress: false
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Restore previous feed (makes the hunt incremental)
+        run: |
+          mkdir -p site
+          curl -fsSL https://feed.patchpulsehq.com/intel.json -o previous.json \
+            || curl -fsSL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/intel.json" -o previous.json \
+            || echo '{}' > previous.json
+      - name: Hunt
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+          PP_RULES_SIGNING_KEY: ${{ secrets.PP_RULES_SIGNING_KEY }}
+        run: |
+          printf '%s' "$PP_RULES_SIGNING_KEY" > key.txt
+          python -m patchpulse hunt --state previous.json --out site/intel.json --sign-key key.txt \
+            --plugins "${{ vars.PP_PLUGINS }}"
+          # curated plain-English advisories (edit patchpulse/data/rules.json, bump rules_version)
+          python - <<'PY'
+          import json
+          from patchpulse import licensing, rules
+          src = json.load(open("patchpulse/data/rules.json", encoding="utf-8"))
+          rules.validate(src)
+          env = licensing.sign_rules(open("key.txt").read().strip(), src)
+          licensing.unwrap_rules(env)
+          json.dump(env, open("site/rules.json", "w", encoding="utf-8"), ensure_ascii=False)
+          PY
+          rm -f key.txt
+          echo "<p>PatchPulse signed threat feed. Updated $(date -u).</p>" > site/index.html
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+      - uses: actions/deploy-pages@v4

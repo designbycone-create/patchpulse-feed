@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "rules_version": "2026.10.23.1",
+  "updated": "2026-10-23",
+  "products": {
+    "php": {
+      "display": "PHP",
+      "branches": {
+        "5.6": {"eol": "2018-12-31"},
+        "7.0": {"eol": "2019-01-10"},
+        "7.1": {"eol": "2019-12-01"},
+        "7.2": {"eol": "2020-11-30"},
+        "7.3": {"eol": "2021-12-06"},
+        "7.4": {"eol": "2022-11-28"},
+        "8.0": {"eol": "2023-11-26"},
+        "8.1": {"eol": "2025-12-31"},
+        "8.2": {"eol": "2026-12-31"},
+        "8.3": {"eol": "2027-12-31"},
+        "8.4": {"eol": "2028-12-31"},
+        "8.5": {"eol": "2029-12-31"}
+      },
+      "recommended_branch": "8.4",
+      "eol_warning_days": 90
+    }
+  },
+  "advisories": [
+    {
+      "id": "PHP2SHELL-2026",
+      "product": "php",
+      "name": "PHP2Shell",
+      "cves": ["CVE-2026-109618", "CVE-2026-109619"],
+      "severity": "critical",
+      "published": "2026-10-21",
+      "affected_from": "5.4.0",
+      "fixed_in": {"8.2": "8.2.35", "8.3": "8.3.36", "8.4": "8.4.27", "8.5": "8.5.12"},
+      "unlisted_branches": "vulnerable",
+      "title": "Your PHP has the 'PHP2Shell' break-in flaw",
+      "summary": "Two critical flaws in PHP itself (the software your website runs on) let a stranger take over the website with a single web request - no password needed. Attacks started on October 21, 2026. Updating WordPress or plugins does NOT fix this; only updating PHP does.",
+      "fix": "Update PHP to 8.2.35, 8.3.36, 8.4.27, 8.5.12 or newer. On regular web hosting your hosting company controls this - send them the ready-made message below. If you run your own server, update the PHP packages and restart PHP-FPM / your web server.",
+      "support_ask": "Please confirm my website's PHP has the fix for CVE-2026-109618 and CVE-2026-109619 (PHP2Shell): PHP 8.2.35, 8.3.36, 8.4.27, 8.5.12 or newer, or a security backport.",
+      "backport_note": "Some Linux distributions fix this without changing the version number. If your host says the fix is 'backported', you are fine - mark this as resolved.",
+      "references": [
+        "https://cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619",
+        "https://www.kaspersky.com/blog/cve-2026-109618-109619-php-vulnerabilities/56583/"
+      ]
+    }
+  ]
+}

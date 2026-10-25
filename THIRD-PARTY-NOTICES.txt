@@ -1,0 +1,78 @@
+PatchPulse includes the following third-party components.
+
+1. Atkinson Hyperlegible font (files: patchpulse/web/fonts/*.woff2)
+   Copyright 2020 Braille Institute of America, Inc.
+   Licensed under the SIL Open Font License, Version 1.1.
+   Full license text: patchpulse/web/fonts/OFL-LICENSE.txt
+   Font files obtained from the @fontsource/atkinson-hyperlegible package (v5.3.0).
+
+2. certifi (bundled only in the prebuilt one-file apps)
+   Mozilla CA certificate bundle, packaged by Kenneth Reitz.
+   Licensed under the Mozilla Public License 2.0: https://www.mozilla.org/MPL/2.0/
+   Source: https://github.com/certifi/python-certifi
+
+3. Python runtime (bundled only in the prebuilt one-file apps)
+   Copyright (c) 2001 Python Software Foundation. Licensed under the PSF License Agreement:
+   https://docs.python.org/3/license.html
+
+4. Ed25519 implementation (patchpulse/ed25519.py)
+   Written for PatchPulse following the reference algorithm published in
+   RFC 8032, "Edwards-Curve Digital Signature Algorithm (EdDSA)",
+   S. Josefsson and I. Liusvaara, IETF, January 2017. https://www.rfc-editor.org/rfc/rfc8032
+   Code components extracted from IETF documents are made available under the
+   Revised BSD License (IETF Trust Legal Provisions, section 4).
+
+5. Threat data sources used by PatchPulse's threat hunting (fetched at run time)
+
+   a. CISA Known Exploited Vulnerabilities (KEV) catalog
+      https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+      Distributed under the Creative Commons Zero (CC0 1.0) license. PatchPulse is an
+      independent product. Use of this data does not mean CISA or DHS endorses
+      PatchPulse, and PatchPulse does not use the CISA logo or DHS seal.
+
+   b. NIST National Vulnerability Database (NVD) - https://nvd.nist.gov
+      This product uses data from the NVD API but is not endorsed or certified by the NVD.
+      PatchPulse shows CVE identifiers, severity scores and affected version ranges,
+      and links to each record on nvd.nist.gov. It does not reproduce CVE description text.
+
+   b2. CVE Program records (fallback when the NVD is unreachable)
+      https://github.com/CVEProject/cvelistV5 - affected-version data published by each
+      product's own security team. CVE(R) is a registered trademark of The MITRE Corporation.
+      Copyright (c) The MITRE Corporation. Used under the CVE Terms of Use
+      (https://www.cve.org/Legal/TermsOfUse):
+
+      "CVE Usage: MITRE hereby grants you a perpetual, worldwide, non-exclusive,
+      no-charge, royalty-free, irrevocable copyright license to reproduce, prepare
+      derivative works of, publicly display, publicly perform, sublicense, and
+      distribute Common Vulnerabilities and Exposures (CVE(R)). Any copy you make for
+      such purposes is authorized provided that you reproduce MITRE's copyright
+      designation and this license in any such copy.
+
+      DISCLAIMERS
+
+      ALL DOCUMENTS AND THE INFORMATION CONTAINED THEREIN PROVIDED BY MITRE ARE
+      PROVIDED ON AN "AS IS" BASIS AND THE CONTRIBUTOR, THE ORGANIZATION HE/SHE
+      REPRESENTS OR IS SPONSORED BY (IF ANY), THE MITRE CORPORATION, ITS BOARD OF
+      TRUSTEES, OFFICERS, AGENTS, AND EMPLOYEES, DISCLAIM ALL WARRANTIES, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE
+      INFORMATION THEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
+      MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE."
+
+   c. endoflife.date - https://endoflife.date
+      Release and support dates, MIT License, Copyright (c) 2020 endoflife.date contributors.
+      A snapshot is bundled in patchpulse/data/eol_snapshot.json. The MIT permission notice:
+      "Permission is hereby granted, free of charge, to any person obtaining a copy of this
+      software and associated documentation files (the "Software"), to deal in the Software
+      without restriction, including without limitation the rights to use, copy, modify,
+      merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+      permit persons to whom the Software is furnished to do so, subject to the following
+      conditions: The above copyright notice and this permission notice shall be included
+      in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS
+      IS", WITHOUT WARRANTY OF ANY KIND."
+
+   d. WordPress.org public APIs (current WordPress and plugin version numbers).
+      "WordPress" is a trademark of the WordPress Foundation; PatchPulse is not affiliated
+      with or endorsed by the WordPress Foundation.
+
+6. Curated advisories in patchpulse/data/rules.json are written in our own words from
+   public advisories, which are linked in each entry.

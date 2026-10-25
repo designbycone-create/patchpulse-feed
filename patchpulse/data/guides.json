@@ -1,0 +1,333 @@
+{
+  "providers": {
+    "unsure": {
+      "name": "I'm not sure",
+      "panel": "your hosting control panel",
+      "support": "Look at your credit-card or bank statement for a charge from a web hosting company, or search your email for 'hosting' or 'cPanel' - that's who to contact.",
+      "php": [
+        "Find out who hosts your website (see tip below).",
+        "Contact them and paste the ready-made message from PatchPulse.",
+        "Once they confirm, click 'Check now' in PatchPulse."
+      ],
+      "files": [
+        "Ask whoever built or hosts your website to remove the file listed above.",
+        "Click 'Check now' afterward to confirm it's gone."
+      ]
+    },
+    "hostinger": {
+      "name": "Hostinger",
+      "panel": "hPanel",
+      "support": "Live chat: log in to hPanel and use the Help / chat button.",
+      "php": [
+        "Log in to hPanel at hpanel.hostinger.com.",
+        "Open Websites, then click Dashboard (or Manage) next to your site.",
+        "Look for 'PHP Configuration' (usually under Advanced) and choose PHP 8.4 or newer.",
+        "Hostinger manages the exact security patch level, so also send them the ready-made message to confirm the fix is installed."
+      ],
+      "files": [
+        "In hPanel open your website, then 'File Manager'.",
+        "Open the public_html folder, find the file listed above, right-click it and Delete."
+      ],
+      "panel_url": "https://hpanel.hostinger.com/"
+    },
+    "godaddy": {
+      "name": "GoDaddy",
+      "panel": "cPanel (inside your GoDaddy account)",
+      "support": "Phone or chat from your GoDaddy account's Help page.",
+      "php": [
+        "Sign in to GoDaddy, go to My Products, and open cPanel Admin for your hosting.",
+        "In cPanel find 'Select PHP Version' or 'MultiPHP Manager'.",
+        "Choose PHP 8.4 or newer for your site and save.",
+        "Send GoDaddy the ready-made message to confirm the security patch is installed."
+      ],
+      "files": [
+        "Open cPanel, then 'File Manager'.",
+        "Open public_html, select the file listed above, and click Delete."
+      ],
+      "panel_url": "https://account.godaddy.com/products"
+    },
+    "bluehost": {
+      "name": "Bluehost",
+      "panel": "Bluehost account / cPanel",
+      "support": "Chat or phone from the Help section of your Bluehost account.",
+      "php": [
+        "Log in to your Bluehost account.",
+        "Open your website's settings or the Advanced (cPanel) area and look for 'PHP Version' or 'MultiPHP Manager'.",
+        "Choose PHP 8.4 or newer and save.",
+        "Send Bluehost the ready-made message to confirm the security patch is installed."
+      ],
+      "files": [
+        "Open the Advanced (cPanel) area, then 'File Manager'.",
+        "Open public_html, select the file listed above, and Delete it."
+      ],
+      "panel_url": "https://my.bluehost.com/"
+    },
+    "siteground": {
+      "name": "SiteGround",
+      "panel": "Site Tools",
+      "support": "Open a ticket or chat from the Help Center in your SiteGround account.",
+      "php": [
+        "Log in and open Site Tools for your website.",
+        "Go to Devs > PHP Manager.",
+        "Pick PHP 8.4 or newer (or the 'Managed PHP' option, which SiteGround keeps updated).",
+        "Send SiteGround the ready-made message to confirm the security patch is installed."
+      ],
+      "files": [
+        "In Site Tools go to Site > File Manager.",
+        "Open public_html, select the file listed above, and Delete it."
+      ],
+      "panel_url": "https://my.siteground.com/"
+    },
+    "namecheap": {
+      "name": "Namecheap",
+      "panel": "cPanel",
+      "support": "Live chat from the Namecheap Help Center.",
+      "php": [
+        "Log in to cPanel for your hosting.",
+        "Open 'Select PHP Version' (sometimes called 'PHP Selector').",
+        "Choose 8.4 or newer and click 'Set as current'.",
+        "Send Namecheap the ready-made message to confirm the security patch is installed."
+      ],
+      "files": [
+        "Open cPanel > File Manager > public_html.",
+        "Select the file listed above and Delete it."
+      ],
+      "panel_url": "https://ap.www.namecheap.com/"
+    },
+    "hostgator": {
+      "name": "HostGator",
+      "panel": "cPanel",
+      "support": "Chat or phone from your HostGator customer portal.",
+      "php": [
+        "Log in to cPanel.",
+        "Open 'MultiPHP Manager' or 'Select PHP Version'.",
+        "Choose PHP 8.4 or newer for your domain and apply.",
+        "Send HostGator the ready-made message to confirm the security patch is installed."
+      ],
+      "files": [
+        "Open cPanel > File Manager > public_html.",
+        "Select the file listed above and Delete it."
+      ],
+      "panel_url": "https://portal.hostgator.com/"
+    },
+    "dreamhost": {
+      "name": "DreamHost",
+      "panel": "DreamHost panel",
+      "support": "Contact Support from the DreamHost panel.",
+      "php": [
+        "Log in to the DreamHost panel and open Websites.",
+        "Open your site's settings and find the PHP version option.",
+        "Choose PHP 8.4 or newer and save.",
+        "Send DreamHost the ready-made message to confirm the security patch is installed."
+      ],
+      "files": [
+        "Use the panel's File Manager (or FTP) to open your site's folder.",
+        "Delete the file listed above."
+      ],
+      "panel_url": "https://panel.dreamhost.com/"
+    },
+    "ionos": {
+      "name": "IONOS",
+      "panel": "IONOS control panel",
+      "support": "Phone or chat from the IONOS Help Center.",
+      "php": [
+        "Log in and open Hosting for your contract.",
+        "Find 'PHP version' in your site's settings.",
+        "Choose PHP 8.4 or newer and save.",
+        "Send IONOS the ready-made message to confirm the security patch is installed."
+      ],
+      "files": [
+        "Open Webspace Explorer (file manager).",
+        "Delete the file listed above."
+      ],
+      "panel_url": "https://my.ionos.com/"
+    },
+    "cpanel": {
+      "name": "Other host with cPanel",
+      "panel": "cPanel",
+      "support": "Use your host's support chat or ticket system.",
+      "php": [
+        "Log in to cPanel (often yoursite.com/cpanel).",
+        "Open 'MultiPHP Manager' or 'Select PHP Version'.",
+        "Choose PHP 8.4 or newer and save.",
+        "Ask your host to confirm the security patch is installed (ready-made message below)."
+      ],
+      "files": [
+        "Open cPanel > File Manager > public_html.",
+        "Select the file listed above and Delete it."
+      ]
+    },
+    "plesk": {
+      "name": "Host with Plesk",
+      "panel": "Plesk",
+      "support": "Use your host's support chat or ticket system.",
+      "php": [
+        "Log in to Plesk and open Websites & Domains.",
+        "Click 'PHP' (or 'PHP Settings') for your domain.",
+        "Choose PHP 8.4 or newer and click OK.",
+        "Ask your host to confirm the security patch is installed (ready-made message below)."
+      ],
+      "files": [
+        "In Plesk open Files (File Manager), then httpdocs.",
+        "Select the file listed above and Remove it."
+      ]
+    },
+    "managedwp": {
+      "name": "Managed WordPress (WP Engine, Kinsta, Flywheel, etc.)",
+      "panel": "your managed WordPress dashboard",
+      "support": "Use the support chat in your managed WordPress dashboard - they handle PHP for you.",
+      "php": [
+        "Managed WordPress hosts update PHP for you, but you choose the version.",
+        "In your hosting dashboard open your site's settings and look for 'PHP version'.",
+        "Choose PHP 8.4 or newer if available.",
+        "Send support the ready-made message to confirm the fix is in place."
+      ],
+      "files": [
+        "Use your host's file manager or SFTP to delete the file, or ask support to remove it."
+      ]
+    },
+    "vps": {
+      "name": "My own server / VPS",
+      "panel": "your server's command line",
+      "support": "You (or your developer) manage this server.",
+      "php": [
+        "Connect to your server with SSH.",
+        "Ubuntu/Debian: run   sudo apt update && sudo apt install --only-upgrade 'php*'   (RHEL/Alma/Rocky: sudo dnf upgrade 'php*').",
+        "Restart PHP:   sudo systemctl restart 'php*-fpm' apache2 nginx 2>/dev/null",
+        "Check:   php -v   - and click 'Check now' in PatchPulse. Distros often patch without changing the version number; check the package changelog for the CVE numbers."
+      ],
+      "files": [
+        "Connect with SSH and delete the file, for example:   sudo rm /var/www/html/.env   (use your real path).",
+        "Better: block hidden files in your web server config (nginx: location ~ /\\. { deny all; })."
+      ]
+    }
+  },
+  "topics": {
+    "php_upgrade": {
+      "title": "How to update PHP",
+      "intro": "PHP is the engine underneath most websites (including every WordPress site). Updating it is usually a setting in your hosting account - you don't need to touch your website's design or content.",
+      "safety": "Before changing the PHP version: make a backup (most hosts have a one-click backup). After changing, open your website and click around. If something looks broken, switch back and ask your host or developer for help."
+    },
+    "check_file": {
+      "title": "Get your exact PHP version (2 minutes)",
+      "intro": "Many hosts hide the PHP version, which is good - but then PatchPulse can't tell whether you're protected. This small file lets PatchPulse (and only PatchPulse) see it.",
+      "steps": [
+        "Click 'Download my check file' below. It contains a secret key made just for this website.",
+        "Open your hosting File Manager and go into the main website folder (usually 'public_html', 'www' or 'httpdocs' - the one with index.php in it).",
+        "Upload the file there. Keep its name exactly: patchpulse-check.php",
+        "Come back here and click 'Check now'. You should see your exact PHP version."
+      ],
+      "safety": "The file only answers when it receives your secret key, only shares the PHP version and two settings, and never changes anything. Delete it any time."
+    },
+    "ssl": {
+      "title": "Fixing the padlock (SSL / https)",
+      "intro": "The padlock means visitors' information is encrypted. Almost every host now offers it free (often called 'Let's Encrypt', 'AutoSSL' or 'Free SSL')."
+    },
+    "exposed_file": {
+      "title": "Removing a file that shouldn't be public",
+      "intro": "Some files are meant to stay private but were left inside the public website folder. Deleting the file stops the leak - but if it held passwords, change those passwords too, because robots scan for these files constantly."
+    },
+    "wordpress": {
+      "title": "Updating WordPress safely",
+      "intro": "WordPress updates fix security holes. Update WordPress itself, then plugins, then themes.",
+      "steps": [
+        "Make a backup first (your host or a backup plugin).",
+        "Log in to your WordPress Dashboard (yoursite.com/wp-admin).",
+        "Click 'Updates' in the left menu.",
+        "Click 'Update to version ...', then update plugins and themes on the same page.",
+        "Visit your site to check everything looks right, then click 'Check now' in PatchPulse."
+      ]
+    },
+    "headers": {
+      "title": "Extra browser protection (low priority)",
+      "intro": "These are optional settings that make browsers add extra protection. Fix red and orange items first. For WordPress, many security plugins add these with one switch."
+    },
+    "down": {
+      "title": "When your website is down",
+      "intro": "Check your site from your phone using mobile data (not Wi-Fi). If it's down there too, contact your host. If you recently updated a plugin or theme, mention that - it's the most common cause."
+    },
+    "wp_plugin": {
+      "title": "Updating a WordPress plugin",
+      "intro": "Plugins add features to WordPress, and out-of-date plugins are the most common way WordPress sites get broken into.",
+      "steps": [
+        "Make a backup first (your host or a backup plugin).",
+        "Log in to your WordPress Dashboard (yoursite.com/wp-admin).",
+        "Click 'Plugins' in the left menu.",
+        "Find the plugin named in this message and click 'Update now'. If there's no update button, deactivate and delete the plugin until a fixed version is released.",
+        "Visit your site to check everything still works, then click 'Check now' in PatchPulse."
+      ]
+    },
+    "server": {
+      "title": "Updating the web server software",
+      "intro": "The web server (Apache or nginx) is the program that delivers your website to visitors. On regular hosting your hosting company updates it, so the ready-made message is usually all you need."
+    },
+    "cms": {
+      "title": "Updating your site builder",
+      "intro": "Drupal and Joomla release security updates regularly. Your web developer or host can apply them; make a backup first."
+    },
+    "integrity": {
+      "title": "When something on your site changed",
+      "intro": "PatchPulse remembers what outside code your homepage loads. When something new shows up, check whether you or your developer added it. If nobody did, treat it as urgent: change your website and hosting passwords and contact your host."
+    },
+    "protect": {
+      "title": "Keep this website protected",
+      "intro": "These are the protections you can switch on yourself, once, so many future fixes happen without you. PatchPulse opens the right screen; you click the switch. Tick each one off when it's done.",
+      "items": [
+        {
+          "key": "wp-core-auto",
+          "wordpress": true,
+          "title": "Turn on automatic WordPress updates",
+          "steps": [
+            "Click 'Open WordPress updates' below and log in.",
+            "Near the top of the page, click 'Enable automatic updates for all new versions of WordPress' (if it says they're already on, you're done).",
+            "Keep a backup running: most hosts include one, or use a backup plugin."
+          ],
+          "link": "wp-updates"
+        },
+        {
+          "key": "wp-plugin-auto",
+          "wordpress": true,
+          "title": "Turn on automatic plugin updates",
+          "steps": [
+            "Click 'Open WordPress plugins' below and log in.",
+            "In the 'Automatic Updates' column, click 'Enable auto-updates' next to each plugin you trust.",
+            "Delete plugins you no longer use: they can still be broken into even when switched off."
+          ],
+          "link": "wp-plugins-all"
+        },
+        {
+          "key": "host-php",
+          "title": "Choose a supported PHP version and turn on automatic security updates if your host offers it",
+          "steps": [
+            "Open your hosting control panel.",
+            "Find the PHP version setting (steps for your host are in the PHP fix guide) and choose 8.4 or newer.",
+            "If your host offers 'managed' or 'automatic' PHP updates, turn that on."
+          ],
+          "link": "panel"
+        },
+        {
+          "key": "firewall",
+          "title": "Turn on the website firewall your host or CDN already provides",
+          "steps": [
+            "Open your hosting control panel and look for a 'Security' section. Many hosts include a website firewall or malware scanner you can switch on.",
+            "If your site uses Cloudflare: log in at dash.cloudflare.com, open your website, then Security, and make sure the managed security rules are switched on.",
+            "If you're not sure whether you have one, send your host the message below."
+          ],
+          "link": "panel",
+          "support_ask": "Does my hosting plan include a website firewall (WAF) or malware protection, and can you make sure it's switched on for my site?"
+        },
+        {
+          "key": "backups",
+          "title": "Make sure automatic backups are on",
+          "steps": [
+            "Open your hosting control panel and look for 'Backups'.",
+            "Check that daily automatic backups are switched on, and note how to restore one.",
+            "A recent backup makes every update safe to try."
+          ],
+          "link": "panel",
+          "support_ask": "Are daily automatic backups switched on for my website, and how do I restore one?"
+        }
+      ]
+    }
+  }
+}
