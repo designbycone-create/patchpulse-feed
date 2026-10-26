@@ -45,6 +45,28 @@ jobs:
           curl -fsSL https://feed.patchpulsehq.com/intel.json -o previous.json \
             || curl -fsSL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/intel.json" -o previous.json \
             || echo '{}' > previous.json
+      - name: Check the signing key
+        env:
+          PP_RULES_SIGNING_KEY: ${{ secrets.PP_RULES_SIGNING_KEY }}
+        run: |
+          python - <<'PY'
+          import os, re, sys
+          from patchpulse import config, ed25519
+          k = os.environ.get("PP_RULES_SIGNING_KEY", "").strip()
+          if not k:
+              sys.exit("PP_RULES_SIGNING_KEY secret is missing: add it under Settings > Secrets and variables > Actions.")
+          if not re.fullmatch(r"[0-9a-fA-F]{64}", k):
+              sys.exit("PP_RULES_SIGNING_KEY isn't a signing key (expected 64 letters/numbers, 0-9 and a-f). "
+                       "Paste the whole contents of PRIVATE-rules-signing-key.txt and nothing else.")
+          pub = ed25519.public_key(bytes.fromhex(k)).hex()
+          if pub == config.PUBLIC_KEY_HEX:
+              sys.exit("PP_RULES_SIGNING_KEY holds the LICENSE key. Replace it with the contents of "
+                       "PRIVATE-rules-signing-key.txt (the file with 'rules' in its name).")
+          if pub != config.RULES_PUBLIC_KEY_HEX:
+              sys.exit("PP_RULES_SIGNING_KEY doesn't match this app's rules key (it may be from an older copy of the "
+                       "seller kit). Paste PRIVATE-rules-signing-key.txt from the current kit.")
+          print("Signing key matches the app's rules key.")
+          PY
       - name: Hunt
         env:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
