@@ -84,7 +84,7 @@ def vcmp(a: tuple, b: tuple) -> int:
 
 def in_range(version, r: dict) -> bool:
     v = vt(version)
-    if not v:
+    if not v or not r:  # an empty range carries no version limits: never a match
         return False
     if r.get("exact"):
         return vcmp(v, vt(r["exact"])) == 0
@@ -158,6 +158,11 @@ def parse_cve(cve: dict, kev_entry: dict | None = None, plugin_slugs=()) -> list
     found: dict[str, dict] = {}
 
     def add(product, rng, platform):
+        # NVD sometimes lists a product with no version limits at all (often an add-on module
+        # rather than the product itself). Matching that would flag every version forever, with
+        # no fixed version to recommend, so an unbounded entry is never used.
+        if not rng:
+            return
         rec = found.setdefault(product, {"ranges": [], "platforms": set()})
         if rng not in rec["ranges"]:
             rec["ranges"].append(rng)
@@ -597,11 +602,15 @@ def validate_intel(d: dict) -> dict:
         raise ValueError("unsupported intel schema")
     if not isinstance(d.get("vulns", {}), dict) or not isinstance(d.get("products", {}), dict):
         raise ValueError("bad intel structure")
-    for key, v in d["vulns"].items():
+    for key, v in list(d["vulns"].items()):
         if not re.match(r"^CVE-\d{4}-\d{4,}\|", key):
             raise ValueError(f"bad vuln id {key[:40]}")
         if not isinstance(v.get("ranges"), list):
             raise ValueError("bad ranges")
+        # drop unbounded ranges carried over from older feeds; a flaw left with none is dropped
+        v["ranges"] = [r for r in v["ranges"] if isinstance(r, dict) and r]
+        if not v["ranges"]:
+            del d["vulns"][key]
     return d
 
 

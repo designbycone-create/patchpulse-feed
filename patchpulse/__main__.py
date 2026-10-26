@@ -86,7 +86,7 @@ def cmd_hunt(args) -> int:
     if args.state and Path(args.state).exists():
         try:
             env = json.loads(Path(args.state).read_text("utf-8"))
-            state = env.get("intel", env)
+            state = intel_mod.validate_intel(env.get("intel", env))  # also drops stale unbounded entries
         except Exception:
             state = None
     h = intel_mod.Hunter(state, nvd_api_key=args.nvd_key)
